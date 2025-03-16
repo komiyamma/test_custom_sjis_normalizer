@@ -4,3 +4,9 @@ C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertS
 C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertSJIS.csproj.CoreCompileInputs.cache
 C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertSJIS.dll
 C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertSJIS.pdb
+G:\repogitory\test_custom_sjis_normalizer\CanConvertSJIS\bin\Debug\CanConvertSJIS.dll
+G:\repogitory\test_custom_sjis_normalizer\CanConvertSJIS\bin\Debug\CanConvertSJIS.pdb
+G:\repogitory\test_custom_sjis_normalizer\CanConvertSJIS\obj\Debug\CanConvertSJIS.csproj.AssemblyReference.cache
+G:\repogitory\test_custom_sjis_normalizer\CanConvertSJIS\obj\Debug\CanConvertSJIS.csproj.CoreCompileInputs.cache
+G:\repogitory\test_custom_sjis_normalizer\CanConvertSJIS\obj\Debug\CanConvertSJIS.dll
+G:\repogitory\test_custom_sjis_normalizer\CanConvertSJIS\obj\Debug\CanConvertSJIS.pdb

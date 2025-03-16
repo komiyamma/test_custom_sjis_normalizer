@@ -16,7 +16,7 @@ namespace CanConvertSJIS
         {
             set
             {
-                CanEncodeSjis(value);
+                lastCanEncode = CanEncodeSjis(value);
             }
         }
 
@@ -40,24 +40,17 @@ namespace CanConvertSJIS
                 // デコードできるかどうかをチェック (エンコードとデコードで情報損失がないか)
                 string decodedText = sjisEncoding.GetString(encodedBytes);
                 // 文字列のエンコードとデコードで変化がある場合、SJISに変換できない文字が含まれている
-                lastCanEncode = text.Equals(decodedText);
-
-                return lastCanEncode;
+                return text.Equals(decodedText);
             }
             catch (EncoderFallbackException)
             {
-                lastCanEncode = false;
                 // エンコードできない文字が含まれている場合、EncoderFallbackExceptionが発生
                 return false;
             }
             catch (ArgumentNullException) // textがnullだった場合
             {
-                lastCanEncode = false;
                 return false;
             }
-
-            lastCanEncode = false;
-            return false;
         }
     }
 }
