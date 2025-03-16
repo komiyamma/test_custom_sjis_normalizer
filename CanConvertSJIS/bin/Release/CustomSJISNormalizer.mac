@@ -31,7 +31,7 @@ function customNormalize(text) {
 
     // なんらかの変化があったならそれにしておく
     // （SJISに絶対に収めたいならこの処理はカットだが、多分趣旨は「絶対にSJISに！」じゃなくて「普通によく使われる文字に収めたい」だけだろうからこれで）
-    if (textNFC =! text) { return textNFC; }
+    if (textNFC != text) { return textNFC; }
 
     // ここまでいってだめなら、NFKCでトライ
     return text.normalize("NFKC");
