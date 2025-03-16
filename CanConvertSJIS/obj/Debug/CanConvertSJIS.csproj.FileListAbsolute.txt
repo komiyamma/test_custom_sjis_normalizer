@@ -1,0 +1,6 @@
+C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\bin\Debug\CanConvertSJIS.dll
+C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\bin\Debug\CanConvertSJIS.pdb
+C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertSJIS.csproj.AssemblyReference.cache
+C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertSJIS.csproj.CoreCompileInputs.cache
+C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertSJIS.dll
+C:\Users\master\source\repos\CanConvertSJIS\CanConvertSJIS\obj\Debug\CanConvertSJIS.pdb

@@ -1,0 +1,50 @@
+﻿jsmode "WebView2\\" + currentmacrofilename;
+
+js {
+
+const srcText = gettotaltext();
+
+// 文字単位で分解される。２バイト単位ではない。ちゃんと合成等も考慮される。
+let textArray = [...gettotaltext()];
+
+// ぞれぞれの文字に対して特殊なノーマライズをする
+textArray = textArray.map(customNormalize);
+
+// 分解したものを結合
+const dstText = textArray.join('');
+
+// 変化していたら、更新
+if (srcText != dstText) {
+    settotaltext(dstText);
+}
+
+// 「各文字」に対して行う特殊な関数
+function customNormalize(text) {
+    // そもそもSJISに収まるならば、何もしない
+    if (canConvertSJIS(text)) { return text; }
+
+    // まずは、NFCへのトライ
+    let textNFC = text.normalize("NFC");
+
+    // 結果がSJISに収まってるならそれにしとく
+    if (canConvertSJIS(textNFC)) { return textNFC; }
+
+    // なんらかの変化があったならそれにしておく
+    // （SJISに絶対に収めたいならこの処理はカットだが、多分趣旨は「絶対にSJISに！」じゃなくて「普通によく使われる文字に収めたい」だけだろうからこれで）
+    if (textNFC =! text) { return textNFC; }
+
+    // ここまでいってだめなら、NFKCでトライ
+    return text.normalize("NFKC");
+}
+
+function canConvertSJIS(text) {
+    if (!this.com) {
+        this.com = createobject(currentmacrodirectory() + "\\CanConvertSJIS.dll", "CanConvertSJIS.CanConvertSJIS");
+    }
+
+    this.com.TargetText = text;
+    return this.com.CanEncode;
+}
+
+
+}
