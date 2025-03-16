@@ -4,7 +4,7 @@ js {
 
 const srcText = gettotaltext();
 
-// 文字単位で分解される。２バイト単位ではない。ちゃんと合成等も考慮される。
+// 文字単位で分解される。２バイト単位ではない。
 let textArray = [...gettotaltext()];
 
 // ぞれぞれの文字に対して特殊なノーマライズをする
