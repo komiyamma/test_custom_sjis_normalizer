@@ -4,18 +4,35 @@ js {
 
 const srcText = gettotaltext();
 
-// 文字単位で分解される。２バイト単位ではない。
-let textArray = [...srcText];
+let srcLines = srcText.split("\n");
 
-// ぞれぞれの文字に対して特殊なノーマライズをする
-textArray = textArray.map(customNormalize);
+srcLines = srcLines.map(normalizeLine);
 
-// 分解したものを結合
-const dstText = textArray.join('');
+const dstText = srcLines.join("\n");
 
 // 変化していたら、更新
 if (srcText != dstText) {
     settotaltext(dstText);
+}
+
+function normalizeLine(text) {
+
+    // 行が全部SJISに収まってるなら、そのまま採用
+    if (canConvertSJIS(text)) {
+        return text;
+    }
+
+    // 文字単位で分解される。２バイト単位ではない。
+    let textArray = [...text];
+
+    // ぞれぞれの文字に対して特殊なノーマライズをする
+    textArray = textArray.map(customNormalize);
+
+    // 分解したものを結合
+    const dstText = textArray.join('');
+
+    return dstText;
+
 }
 
 // 「各文字」に対して行う特殊な関数
